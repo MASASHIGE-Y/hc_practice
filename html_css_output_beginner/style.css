@@ -1,0 +1,7 @@
+/* iPhone画面 */
+.3characters {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 20px;
+}
