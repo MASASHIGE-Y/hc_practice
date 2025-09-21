@@ -1,7 +1,131 @@
-/* iPhone画面 */
-.3characters {
+/* iPhoneおよび共通設定 */
+*, *::before, *::after {
+      box-sizing: border-box;
+}
+
+body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+}
+
+.container {
+      text-align: center;
+      width: 100%;
+      max-width: 960px;
+      padding: 0 4%;
+      margin: 0 auto;
+}
+
+.three-characters {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
   font-size: 20px;
+}
+
+.resume {
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+}
+
+.main-visual {
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+}
+
+.main-visual img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+}
+
+.three-characters .links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
+}
+
+.selfintro-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 4%;
+}
+
+.suzuki {
+      text-align: center;
+}
+
+.selfintro-text {
+      width: 60%;
+      margin: 0 auto;
+      text-align: left;
+}
+
+.intropic img {
+      border-radius: 50%;
+      margin-top: 15px;
+}
+
+.profile {
+      display: inline-block;
+      border-bottom: 2px solid #000;
+      padding-bottom: 5px;
+}
+
+.profilepics {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+}
+
+.card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+}
+
+.card img {
+      width: 100%;
+      height: auto;
+      display: block;
+}
+
+/*パソコンの設定*/
+@media screen and (min-width: 600px) {
+      .resume {
+            margin-right: auto;
+      }
+
+      .main-visual {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            overflow: hidden;
+      }
+
+      .introduction {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+      }
+
+      .suzuki {
+            text-align: left;
+            margin: 0;
+      }
+
+      .selfintro-text {
+            flex: 1;
+            margin: 0;
+      }
+
+      .profilepics {
+            grid-template-columns: repeat(3, 1fr);
+      }
 }
