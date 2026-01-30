@@ -23,16 +23,30 @@ function buildCalendar(year, month) {
   let week = [];
 
   // 月初まで空白
-  for (let i = 0; i < firstWeekday; i++) {
-    week.push("  ");    // 1日、2日、3日の週がずれたので、スペースを1つ追加
-  }    
-   
-  // 1日〜末日
-  for (let day = 1; day <= daysInMonth; day++) {
-    week.push(String(day).padStart(2, " "));
-    if (week.length === 7) {
-      weeks.push(week);
-      week = [];
+  function printCalendar(year, month) {
+    const firstWeekday = getFirstWeekday(year, month);
+    const daysInMonth = getDaysInMonth(year, month);
+
+    // タイトル
+    const title = `${year}年${month}月`;
+    console.log(title.padStart(14, " "));
+    console.log(" 日 月 火 水 木 金 土");
+
+    let dayCount = 0;
+
+    // 月初までの空白
+    process.stdout.write("   ".repeat(firstWeekday));
+    dayCount += firstWeekday;
+
+    // 1日〜末日を出力
+    for(let day = 1; day <= daysInMonth; day++) {
+      process.stdout.write(String(day).padStart(3, " "));
+      dayCount++;
+
+      // 土曜日 or 月末で改行
+      if(dayCount % 7 === 0 || day === daysInMonth) {
+        process.stdout.write("\n");
+      }
     }
   }
 
